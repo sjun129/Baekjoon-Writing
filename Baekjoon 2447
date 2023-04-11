@@ -1,0 +1,17 @@
+def star_point(n):
+    if n == 1:
+        return ['*']
+        
+    star = star_point(n//3)
+    
+    result = []
+    for a in star:
+        result.append(a * 3)
+    for a in star:
+        result.append(a+' '*(n//3)+a)
+    for a in star:
+        result.append(a*3)
+    return result
+
+n = int(input())
+print('\n'.join(star_point(n)))
