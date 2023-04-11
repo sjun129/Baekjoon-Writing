@@ -1,0 +1,12 @@
+chess_set = []
+
+for _ in range(8):
+    chess_set.append(list(map(str, input())))
+
+result = 0
+for i in range(8):
+    for j in range(8):
+        if chess_set[i][j] == 'F':
+            if (i + j) % 2 == 0:
+                result += 1
+print(result)
