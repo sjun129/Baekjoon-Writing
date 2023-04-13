@@ -2,11 +2,14 @@ def hanoi(n,a,b):
     c = 6 - a - b
     if n == 1:
         print(a, b)
-        return
+        return 1
     
-    hanoi(n-1, a, c)
-    print(a, c)
-    hanoi(n-1, c, b)
+    cnt = 0
+    cnt += hanoi(n-1, a, c)
+    print(a, b)
+    cnt += hanoi(n-1, c, b)
+    
+    return cnt
     
 n = int(input())
 print(2**n-1)
